@@ -4,7 +4,11 @@ const cn = {
   WIP: "该功能仍在开发中……",
   Error: {
     Unauthorized:
-      "访问密码不正确或为空，请前往[登录](/#/auth)页输入正确的访问密码，或者在[设置](/#/settings)页填入你自己的 OpenAI API Key。",
+      "请在微信关注公众号“是林子呀”\n" +
+      "回复“ChatGPT”获得你的专属访问码\n" +
+      "之后在设置中填入访问码即可进行畅谈\n" +
+      "购买key[前往店铺](https://shop.lookforward.top)\n" +
+      "聊天交流+[ChatGPT交流群](https://qm.qq.com/cgi-bin/qm/qr?k=Y7rhl-S9xe14FfkkMdg8GOB9cYJ9nr_H&jump_from=webapi&authKey=fSaVWNhXEhW/Ru9x3ip7NXptgFCiBzklMnkl8d0gpW7iD366bs6cTv0RgR99ZhjF)\n",
   },
   Auth: {
     Title: "需要密码",
@@ -176,9 +180,9 @@ const cn = {
       NoAccess: "输入 API Key 或访问密码查看余额",
     },
     AccessCode: {
-      Title: "访问密码",
-      SubTitle: "管理员已开启加密访问",
-      Placeholder: "请输入访问密码",
+      Title: "授权码",
+      SubTitle: "微信关注是林子呀公众号获取",
+      Placeholder: "请输入授权密码",
     },
     Endpoint: {
       Title: "接口地址",
@@ -222,10 +226,10 @@ const cn = {
     Revert: "恢复上下文",
   },
   Plugin: {
-    Name: "插件",
+    Name: "店铺",
   },
   Mask: {
-    Name: "面具",
+    Name: "小助手",
     Page: {
       Title: "预设角色面具",
       SubTitle: (count: number) => `${count} 个预设角色定义`,
@@ -265,7 +269,7 @@ const cn = {
     Skip: "直接开始",
     NotShow: "不再展示",
     ConfirmNoShow: "确认禁用？禁用后可以随时在设置中重新启用。",
-    Title: "挑选一个面具",
+    Title: "现在选择一位心仪的助手吧",
     SubTitle: "现在开始，与面具背后的灵魂思维碰撞",
     More: "查看全部",
   },

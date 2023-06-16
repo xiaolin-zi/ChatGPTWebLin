@@ -4,15 +4,16 @@ import styles from "./home.module.scss";
 
 import { IconButton } from "./button";
 import SettingsIcon from "../icons/settings.svg";
-import GithubIcon from "../icons/github.svg";
+// import GithubIcon from "../icons/github.svg";
+import WeiXinIcon from "../icons/weixin.svg";
 import ChatGptIcon from "../icons/chatgpt.svg";
+import MyIcon from "../icons/my.png";
 import AddIcon from "../icons/add.svg";
 import CloseIcon from "../icons/close.svg";
 import MaskIcon from "../icons/mask.svg";
 import PluginIcon from "../icons/plugin.svg";
-
+import ClipboardJS from "clipboard";
 import Locale from "../locales";
-
 import { useAppConfig, useChatStore } from "../store";
 
 import {
@@ -27,6 +28,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
 import { showToast } from "./ui-lib";
+import BotIcon from "@/app/icons/bot.png";
+import NextImage from "next/image";
 
 const ChatList = dynamic(async () => (await import("./chat-list")).ChatList, {
   loading: () => null,
@@ -112,6 +115,33 @@ export function SideBar(props: { className?: string }) {
 
   useHotKey();
 
+  function toShop() {
+    const url = "https://shop.lookforward.top";
+    window.open(url, "_blank");
+  }
+
+  function toWeiXin() {
+    const textToCopy = "tobeyou-20";
+    const clipboard = new ClipboardJS("#weixin", {
+      text: () => textToCopy,
+    });
+
+    clipboard.on("success", (e) => {
+      console.log("复制成功");
+      // 复制成功后的逻辑
+      showToast("已经复制好微信号，打开微信添加好友吧！");
+      //跳转到微信
+      setTimeout(() => {
+        window.open("weixin://");
+      }, 1000);
+    });
+
+    clipboard.on("error", (e) => {
+      console.log("复制失败");
+      // 复制失败后的逻辑
+    });
+  }
+
   return (
     <div
       className={`${styles.sidebar} ${props.className} ${
@@ -120,13 +150,21 @@ export function SideBar(props: { className?: string }) {
     >
       <div className={styles["sidebar-header"]} data-tauri-drag-region>
         <div className={styles["sidebar-title"]} data-tauri-drag-region>
-          ChatGPT Next
+          林子
         </div>
-        <div className={styles["sidebar-sub-title"]}>
-          Build your own AI assistant.
-        </div>
-        <div className={styles["sidebar-logo"] + " no-dark"}>
-          <ChatGptIcon />
+        <div className={styles["sidebar-sub-title"]}>公众号：是林子呀</div>
+        <div
+          className={styles["sidebar-logo"] + " no-dark"}
+          onClick={() => toWeiXin()}
+        >
+          {/*<ChatGptIcon/>*/}
+          <NextImage
+            src={MyIcon.src}
+            width={50}
+            height={50}
+            alt="bot"
+            className="user-avatar"
+          />
         </div>
       </div>
 
@@ -142,7 +180,7 @@ export function SideBar(props: { className?: string }) {
           icon={<PluginIcon />}
           text={shouldNarrow ? undefined : Locale.Plugin.Name}
           className={styles["sidebar-bar-button"]}
-          onClick={() => showToast(Locale.WIP)}
+          onClick={() => toShop()}
           shadow
         />
       </div>
@@ -176,9 +214,12 @@ export function SideBar(props: { className?: string }) {
             </Link>
           </div>
           <div className={styles["sidebar-action"]}>
-            <a href={REPO_URL} target="_blank">
-              <IconButton icon={<GithubIcon />} shadow />
-            </a>
+            {/*<a href={REPO_URL} target="_blank">*/}
+            {/*  <IconButton icon={<GithubIcon />} shadow />*/}
+            {/*</a>*/}
+            <div onClick={() => toWeiXin()} id="weixin">
+              <IconButton icon={<WeiXinIcon />} shadow />
+            </div>
           </div>
         </div>
         <div>
