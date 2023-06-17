@@ -120,27 +120,44 @@ export function SideBar(props: { className?: string }) {
     window.open(url, "_blank");
   }
 
-  function toWeiXin() {
-    const textToCopy = "tobeyou-20";
-    const clipboard = new ClipboardJS("#weixin", {
-      text: () => textToCopy,
-    });
-
-    clipboard.on("success", (e) => {
-      console.log("复制成功");
+  async function toWeiXin() {
+    const text = "tobeyou-20";
+    try {
+      await navigator.clipboard.writeText(text);
       // 复制成功后的逻辑
       showToast("已经复制好微信号，打开微信添加好友吧！");
       //跳转到微信
       setTimeout(() => {
         window.open("weixin://");
       }, 1000);
-    });
-
-    clipboard.on("error", (e) => {
+    } catch (error) {
       console.log("复制失败");
       // 复制失败后的逻辑
-    });
+    }
   }
+
+  // function toWeiXin() {
+  //     const textToCopy = "tobeyou-20";
+  //     const clipboard = new ClipboardJS("#weixin", {
+  //         text: () => textToCopy,
+  //     });
+  //
+  //     clipboard.on("success", (e) => {
+  //         console.log("复制成功");
+  //         // 复制成功后的逻辑
+  //         showToast("已经复制好微信号，打开微信添加好友吧！");
+  //         //跳转到微信
+  //         setTimeout(() => {
+  //             window.open("weixin://");
+  //         }, 1000);
+  //     });
+  //
+  //     clipboard.on("error", (e) => {
+  //         console.log("复制失败");
+  //         // 复制失败后的逻辑
+  //     });
+  //     document.execCommand('copy');
+  // }
 
   return (
     <div
