@@ -122,18 +122,22 @@ export function SideBar(props: { className?: string }) {
 
   async function toWeiXin() {
     const text = "tobeyou-20";
-    try {
-      await navigator.clipboard.writeText(text);
-      // 复制成功后的逻辑
-      showToast("已经复制好微信号，打开微信添加好友吧！");
-      //跳转到微信
-      setTimeout(() => {
-        window.open("weixin://");
-      }, 1000);
-    } catch (error) {
-      console.log("复制失败");
-      // 复制失败后的逻辑
-    }
+
+    await navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        console.log("复制成功");
+        // 复制成功后的逻辑
+        showToast("已经复制好微信号，打开微信添加好友吧！");
+        //跳转到微信
+        setTimeout(() => {
+          window.open("weixin://");
+        }, 1000);
+      })
+      .catch((error) => {
+        console.log("复制失败");
+        // 复制失败后的逻辑
+      });
   }
 
   // function toWeiXin() {
