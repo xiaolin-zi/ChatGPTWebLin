@@ -8,6 +8,7 @@ const cn = {
       "回复“ChatGPT”获得你的专属访问码\n" +
       "之后在设置中填入访问码即可进行畅谈\n" +
       "购买key[前往店铺](https://shop.lookforward.top)\n" +
+      "站长微信：tobeyou-20\n" +
       "聊天交流+[ChatGPT交流群](https://qm.qq.com/cgi-bin/qm/qr?k=Y7rhl-S9xe14FfkkMdg8GOB9cYJ9nr_H&jump_from=webapi&authKey=fSaVWNhXEhW/Ru9x3ip7NXptgFCiBzklMnkl8d0gpW7iD366bs6cTv0RgR99ZhjF)\n",
   },
   Auth: {
