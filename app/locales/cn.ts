@@ -4,12 +4,9 @@ const cn = {
   WIP: "该功能仍在开发中……",
   Error: {
     Unauthorized:
-      "请在微信关注公众号“是林子呀”\n" +
-      "回复“ChatGPT”获得你的专属访问码\n" +
-      "之后在设置中填入访问码即可进行畅谈\n" +
-      "购买key[前往店铺](https://shop.lookforward.top)\n" +
-      "站长微信：tobeyou-20\n" +
-      "聊天交流+[ChatGPT交流群](https://qm.qq.com/cgi-bin/qm/qr?k=Y7rhl-S9xe14FfkkMdg8GOB9cYJ9nr_H&jump_from=webapi&authKey=fSaVWNhXEhW/Ru9x3ip7NXptgFCiBzklMnkl8d0gpW7iD366bs6cTv0RgR99ZhjF)\n",
+      "请联系微信：yangchenglin1992”\n" +
+      "获得你的专属访问码\n" +
+      "之后在设置中填入访问码即可进行畅谈\n",
   },
   Auth: {
     Title: "需要密码",
@@ -181,9 +178,9 @@ const cn = {
       NoAccess: "输入 API Key 或访问密码查看余额",
     },
     AccessCode: {
-      Title: "授权码",
-      SubTitle: "微信关注是林子呀公众号获取",
-      Placeholder: "请输入授权密码",
+      Title: "访问码",
+      SubTitle: "添加站长微信获取",
+      Placeholder: "请输入访问密码",
     },
     Endpoint: {
       Title: "接口地址",

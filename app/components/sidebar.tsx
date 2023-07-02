@@ -121,7 +121,7 @@ export function SideBar(props: { className?: string }) {
   }
 
   async function toWeiXin() {
-    const text = "tobeyou-20";
+    const text = "yangchenglin1992";
 
     await navigator.clipboard
       .writeText(text)
@@ -171,9 +171,11 @@ export function SideBar(props: { className?: string }) {
     >
       <div className={styles["sidebar-header"]} data-tauri-drag-region>
         <div className={styles["sidebar-title"]} data-tauri-drag-region>
-          林子
+          林
         </div>
-        <div className={styles["sidebar-sub-title"]}>公众号：是林子呀</div>
+        <div className={styles["sidebar-sub-title"]}>
+          微信：yangchenglin1992
+        </div>
         <div
           className={styles["sidebar-logo"] + " no-dark"}
           onClick={() => toWeiXin()}
@@ -197,13 +199,13 @@ export function SideBar(props: { className?: string }) {
           onClick={() => navigate(Path.NewChat, { state: { fromHome: true } })}
           shadow
         />
-        <IconButton
-          icon={<PluginIcon />}
-          text={shouldNarrow ? undefined : Locale.Plugin.Name}
-          className={styles["sidebar-bar-button"]}
-          onClick={() => toShop()}
-          shadow
-        />
+        {/*<IconButton*/}
+        {/*  icon={<PluginIcon />}*/}
+        {/*  text={shouldNarrow ? undefined : Locale.Plugin.Name}*/}
+        {/*  className={styles["sidebar-bar-button"]}*/}
+        {/*  onClick={() => toShop()}*/}
+        {/*  shadow*/}
+        {/*/>*/}
       </div>
 
       <div
